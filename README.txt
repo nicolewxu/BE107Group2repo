@@ -1,2 +1,0 @@
-Nicole Xu
-Nathan Schoepp
