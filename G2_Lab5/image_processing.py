@@ -42,14 +42,14 @@ class Image_Processor:
             cv2.findContours(img_cont_ad, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_SIMPLE)
             cv2.drawContours(img_cont_ad, contours_ad, -1, (128, 255,0), 3)
 
-						print(len(contours_ad))
+            print(len(contours_ad))
 
-						xcoor_ad = np.empty(len(contours_ad))
-						ycoor_ad = np.empty(len(contours_ad))
-						rad_ad = np.empty(len(contours_ad))
-						circle_ad = []
+            xcoor_ad = np.empty(len(contours_ad))
+            ycoor_ad = np.empty(len(contours_ad))
+            rad_ad = np.empty(len(contours_ad))
+            circle_ad = []
 						
-						for i in range(len(contours_ad)):
+            for i in range(len(contours_ad)):
 							(xcoor_ad[i], ycoor_ad[i]), rad_ad[i] = cv2.minEnclosingCircle(contours_ad[i])
 							circle_ad.append(circle_ad)
 							circles_ad = cv2.circle(img_ad_thresh, (np.uint8(xcoor_ad[i]), np.uint8(ycoor_ad[i])), np.uint8(rad_ad[i]),(0,255,0), 2)
